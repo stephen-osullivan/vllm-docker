@@ -7,8 +7,7 @@ docker pull vllm/vllm-openai:latest
 
 run with these commands
 
-docker run --gpus=all -v /home/sos00/.cache/huggingface/hub:/models -e HF_HUB=/models -p 8000:8000 vllm/vllm-openai:latest --model TheBloke/Llama-2-7b-Chat-A
-WQ --quantization awq --dtype half --max-model-len 4096
+docker run --gpus=all -v /home/sos00/.cache/huggingface:/models -e HF_HOME=/models -p 8000:8000 vllm/vllm-openai:latest --model TheBloke/Llama-2-7b-Chat-AWQ --quantization awq --dtype half --max-model-len 4096 
 
 view models like this:
 
